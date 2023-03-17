@@ -341,8 +341,6 @@ export interface OidcClientSettings {
     client_id: string;
     // (undocumented)
     client_secret?: string;
-    // @deprecated (undocumented)
-    clockSkewInSeconds?: number;
     disablePKCE?: boolean;
     display?: string;
     extraQueryParams?: Record<string, string | number | boolean>;
@@ -361,8 +359,6 @@ export interface OidcClientSettings {
     prompt?: string;
     redirect_uri: string;
     refreshTokenAllowedScope?: string | undefined;
-    // @deprecated (undocumented)
-    refreshTokenCredentials?: "same-origin" | "include" | "omit";
     resource?: string | string[];
     response_mode?: "query" | "fragment";
     response_type?: string;
@@ -372,13 +368,11 @@ export interface OidcClientSettings {
     staleStateAgeInSeconds?: number;
     stateStore?: StateStore;
     ui_locales?: string;
-    // @deprecated (undocumented)
-    userInfoJwtIssuer?: "ANY" | "OP" | string;
 }
 
 // @public
 export class OidcClientSettingsStore {
-    constructor({ authority, metadataUrl, metadata, signingKeys, metadataSeed, client_id, client_secret, response_type, scope, redirect_uri, post_logout_redirect_uri, client_authentication, prompt, display, max_age, ui_locales, acr_values, resource, response_mode, filterProtocolClaims, loadUserInfo, staleStateAgeInSeconds, clockSkewInSeconds, userInfoJwtIssuer, mergeClaims, disablePKCE, stateStore, refreshTokenCredentials, revokeTokenAdditionalContentTypes, fetchRequestCredentials, refreshTokenAllowedScope, extraQueryParams, extraTokenParams, }: OidcClientSettings);
+    constructor({ authority, metadataUrl, metadata, signingKeys, metadataSeed, client_id, client_secret, response_type, scope, redirect_uri, post_logout_redirect_uri, client_authentication, prompt, display, max_age, ui_locales, acr_values, resource, response_mode, filterProtocolClaims, loadUserInfo, staleStateAgeInSeconds, mergeClaims, disablePKCE, stateStore, revokeTokenAdditionalContentTypes, fetchRequestCredentials, refreshTokenAllowedScope, extraQueryParams, extraTokenParams, }: OidcClientSettings);
     // (undocumented)
     readonly acr_values: string | undefined;
     // (undocumented)
@@ -389,8 +383,6 @@ export class OidcClientSettingsStore {
     readonly client_id: string;
     // (undocumented)
     readonly client_secret: string | undefined;
-    // (undocumented)
-    readonly clockSkewInSeconds: number;
     // (undocumented)
     readonly disablePKCE: boolean;
     // (undocumented)
@@ -441,8 +433,6 @@ export class OidcClientSettingsStore {
     readonly stateStore: StateStore;
     // (undocumented)
     readonly ui_locales: string | undefined;
-    // (undocumented)
-    readonly userInfoJwtIssuer: "ANY" | "OP" | string;
 }
 
 // @public (undocumented)
